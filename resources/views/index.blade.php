@@ -9,19 +9,19 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>Hexashop Ecommerce HTML CSS Template</title>
+    <title>Deployshop </title>
 
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
 
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.css') }}">
 
-    <link rel="stylesheet" href="assets/css/templatemo-hexashop.css">
+    <link rel="stylesheet" href="{{ asset('css/templatemo-hexashop.css') }}">
 
-    <link rel="stylesheet" href="assets/css/owl-carousel.css">
+    <link rel="stylesheet" href="{{ asset('css/owl-carousel.css') }}">
 
-    <link rel="stylesheet" href="assets/css/lightbox.css">
+    <link rel="stylesheet" href="{{ asset('css/lightbox.css') }}">
 <!--
 
 TemplateMo 571 Hexashop
@@ -79,7 +79,21 @@ https://templatemo.com/tm-571-hexashop
                                     <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a></li>
                                 </ul>
                             </li>
-                            <li class="scroll-to-section"><a href="#explore">Explore</a></li>
+                            <li class="scroll-to-section">
+                                @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+                            </li>
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -803,26 +817,26 @@ https://templatemo.com/tm-571-hexashop
     
 
     <!-- jQuery -->
-    <script src="assets/js/jquery-2.1.0.min.js"></script>
+    <script src="{{ asset('js/jquery-2.1.0.min.js') }}"></script>
 
     <!-- Bootstrap -->
-    <script src="assets/js/popper.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/popper.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
     <!-- Plugins -->
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/accordions.js"></script>
-    <script src="assets/js/datepicker.js"></script>
-    <script src="assets/js/scrollreveal.min.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/imgfix.min.js"></script> 
-    <script src="assets/js/slick.js"></script> 
-    <script src="assets/js/lightbox.js"></script> 
-    <script src="assets/js/isotope.js"></script> 
+    <script src="{{ asset('js/owl-carousel.js') }}"></script>
+    <script src="{{ asset('js/accordions.js') }}"></script>
+    <script src="{{ asset('js/datepicker.js') }}"></script>
+    <script src="{{ asset('js/scrollreveal.min.js') }}"></script>
+    <script src="{{ asset('js/waypoints.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('js/imgfix.min.js') }}"></script> 
+    <script src="{{ asset('js/slick.js') }}"></script> 
+    <script src="{{ asset('js/lightbox.js') }}"></script> 
+    <script src="{{ asset('js/isotope.js') }}"></script> 
     
     <!-- Global Init -->
-    <script src="assets/js/custom.js"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
 
     <script>
 
