@@ -60,6 +60,19 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <div class="col-md-6 offset-md-4">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        {{ __('Register as: ') }}
+                                    </label>
+                                    <label for="admin">Admin</label>
+                                    <input class="radio" type="radio" name="role" id="admin" value="Admin">
+                                    <label for="customer">Customer</label>
+                                    <input class="radio" type="radio" name="role" id="customer" value="Customer">
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
