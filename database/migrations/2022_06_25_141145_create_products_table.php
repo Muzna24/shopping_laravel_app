@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('description')->nullable();
             $table->integer('count')->nullable();
             $table->string('image')->nullable();
+            $table->unsignedInteger('admin_id');
             $table->timestamps();
         });
     }
