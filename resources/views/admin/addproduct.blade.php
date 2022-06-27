@@ -41,6 +41,7 @@
         <td>
     <label for="name" class="form-label">Product Name</label></td><td>
     <input type="text" class="form-control" id="product_name"  name="product_name"></td>
+    
 </tr>
   <tr>
     <td>
@@ -51,6 +52,17 @@
   <td><label for="qantinty" class="form-label">Qantity</label>
 </td><td> <input type="number" class="form-control" id="qantity"  name="qantity">
 </td></tr>
+<tr>
+  <td>Category</td>
+  <td>
+  <select name="category" id="category">
+    <option value="mans">Mans</option>
+    <option value="Womans">Womans</option>
+    <option value="Kids">Kids</option>
+  
+  </select>
+</td>  
+</tr>
 <tr><td>
     <label for="name" class="form-label">Description</label>
 </td><td><textarea id="description" name="description" rows="4" cols="50"> </textarea> 

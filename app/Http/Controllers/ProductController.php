@@ -35,6 +35,8 @@ class ProductController extends Controller
         $product->price=$request->price;
         $product->description=$request->description;
         $product->count=$request->qantity;
+        $product->category=$request->category;
+
         $product->image=$imageFileName;
         $product->admin_id=Auth::User()->id;
         $product->save();
