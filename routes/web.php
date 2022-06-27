@@ -1,5 +1,6 @@
 <?php
 
+use App\product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +23,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::view('add-product','admin.addproduct');
-route::post('add-product/add','AddProductController@add');
+Route::post('add-product/add','AddProductController@add');
+Route::get('product/show','ProductController@show');
 
 
