@@ -17,6 +17,17 @@ class ProductController extends Controller
     }
     public function  add(Request $request)
     {
+        $request->validate([
+            'product_name' => 'required',
+            'price' => 'required',
+            'qantity' => 'required',
+            'description' => 'required',
+            'product_Image' => 'required|mimes:jpg',
+        
+        ]);
+        $image=$request->product_Image;
+        $imageFileName=time().'.'.$image->extension();
+        $image->move(public_path('images'),$imageFileName);
     
    
         $product = new Product();
@@ -24,7 +35,7 @@ class ProductController extends Controller
         $product->price=$request->price;
         $product->description=$request->description;
         $product->count=$request->qantity;
-        $product->image=null;
+        $product->image=$imageFileName;
         $product->admin_id=Auth::User()->id;
         $product->save();
         Alert::success(' Product added Sucessfully', 'Success');

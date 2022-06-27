@@ -25,33 +25,46 @@
     
 </head>
 <body>
-    <form method="post" action="/add-product/add">
+  <div class="alert alert-danger">
+    <ul>
+    @foreach($errors->all() as $error)
+    <li>
+    {{$error}}
+</li>
+    @endforeach
+</ul>
+</div>
+    <form method="post" action="/add-product/add" enctype="multipart/form-data">
     @csrf
-    <div class="container">
-        <div class="row pt-5">
-    <div class="mb-3">
-    <label for="name" class="form-label">Product Name</label>
-    <input type="text" class="form-control" id="product_name"  name="product_name">
-  </div>
-  <div class="mb-3">
+    <table>
+      <tr>
+        <td>
+    <label for="name" class="form-label">Product Name</label></td><td>
+    <input type="text" class="form-control" id="product_name"  name="product_name"></td>
+</tr>
+  <tr>
+    <td>
     <label for="name" class="form-label">Price</label>
-    
-    <input type="text" class="form-control" id="price"  name="price">
-    <label for="qantinty" class="form-label">Qantity</label>
-    <input type="number" class="form-control" id="qantity"  name="qantity">OMR
-  </div>
-  <div class="mb-3">
+</td><td>
+    <input type="text" class="form-control" id="price"  name="price">OMR
+</td>
+  <td><label for="qantinty" class="form-label">Qantity</label>
+</td><td> <input type="number" class="form-control" id="qantity"  name="qantity">
+</td></tr>
+<tr><td>
     <label for="name" class="form-label">Description</label>
-    <textarea id="description" name="description" rows="4" cols="50"> </textarea> </div>
-    
-  <div class="mb-3">
-  <label for="formFile" class="form-label">Uplode image</label>
-  <input class="form-control" type="file" id="formFile">
-</div>
+</td><td><textarea id="description" name="description" rows="4" cols="50"> </textarea> 
+</td></tr>
+  <tr><td>
+  <label for="formFile" class="form-label">Product Image</label>
+</td><td><input class="form-control" type="file" id="formFile" name="product_Image">
+</td></tr>
+<tr >
+  <td colspan='2' align='center'>
   <button type="submit" class="btn btn-primary">Add product</button>
-
-</div>
-</div>
+</td>
+</tr>
+<table>
  </form>
  @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
 
