@@ -10,7 +10,8 @@ use Illuminate\Http\Request;
 
 class AddProductController extends Controller
 {
-    public function  add(Request $request){
+    public function  add(Request $request)
+    {
     
    
         $product = new Product();
