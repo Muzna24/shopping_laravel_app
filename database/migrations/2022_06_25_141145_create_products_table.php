@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->double('price')->nullable();
             $table->string('description')->nullable();
             $table->integer('count')->nullable();
+            $table->string('category')->nullable();
             $table->string('image')->nullable();
             $table->unsignedInteger('admin_id');
             $table->timestamps();
