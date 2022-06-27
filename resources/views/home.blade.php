@@ -13,8 +13,65 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="alert alert-info">
+                                    {{ __('You are logged in!') }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                    {{ __('You are logged in!') }}
+                    @if (Auth::User()->role == 'Admin')
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="alert alert-info">
+                                    {{ __('Show products') }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="alert alert-info">
+                                    {{ __('Show orders') }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="alert alert-info">
+                                    {{ __('Import/ Export orders') }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @else
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="alert alert-info">
+                                    {{ __('Show orders') }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="alert alert-info">
+                                    {{ __('Show products') }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                    
                 </div>
             </div>
         </div>

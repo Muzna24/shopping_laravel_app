@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Product;
-use App\User;
 use Auth;
-Use Alert;
+use App\User;
+use App\Product;
 
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AddProductController extends Controller
 {
