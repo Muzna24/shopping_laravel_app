@@ -26,28 +26,20 @@
                     @if (Auth::User()->role == 'Admin')
                     <div class="container">
                         <div class="row">
-                            <div class="col-6">
-                                <div class="alert alert-info">
+                            <div class="col-4">
+                                <button class="btn btn-info" onclick="location.href='{{ url('product/show') }}'">
                                     {{ __('Show products') }}
-                                </div>
+                                </button>
                             </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="alert alert-info">
+                            <div class="col-4">
+                                <button class="btn btn-info" onclick="location.href='{{ url('') }}'">
                                     {{ __('Show orders') }}
-                                </div>
+                                </button>
                             </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="alert alert-info">
+                            <div class="col-4">
+                                <button class="btn btn-info" onclick="location.href='{{ url('') }}'">
                                     {{ __('Import/ Export orders') }}
-                                </div>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -55,16 +47,12 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-4">
-                                <div class="alert alert-info">
+                                <button class="btn btn-info" onclick="location.href='{{ url('') }}'">
                                     {{ __('Show orders') }}
-                                </div>
+                                </button>
                             </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
                             <div class="col-4">
-                                <div class="alert alert-info">
+                                <div class="btn btn-info" onclick="location.href='{{ url('') }}'">
                                     {{ __('Show products') }}
                                 </div>
                             </div>
