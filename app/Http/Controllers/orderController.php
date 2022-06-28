@@ -30,6 +30,8 @@ class orderController extends Controller
             'status'=>$request->ostatus,
             
         ]);
+        Alert::success(' Ordere Updated Sucessfully', 'Success');
+
        
         return back();
     }
