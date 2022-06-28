@@ -27,7 +27,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-6">
-                                <div class="alert alert-info">
+                                <div class="alert alert-info" role="button">
                                     {{ __('Show products') }}
                                 </div>
                             </div>
@@ -36,7 +36,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-6">
-                                <div class="alert alert-info">
+                                <div class="alert alert-info" role="button">
                                     {{ __('Show orders') }}
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-6">
-                                <div class="alert alert-info">
+                                <div class="alert alert-info" role="button">
                                     {{ __('Import/ Export orders') }}
                                 </div>
                             </div>
@@ -55,7 +55,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-4">
-                                <div class="alert alert-info">
+                                <div class="alert alert-info" role="button">
                                     {{ __('Show orders') }}
                                 </div>
                             </div>
@@ -64,7 +64,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-4">
-                                <div class="alert alert-info">
+                                <div class="alert alert-info" role="button">
                                     {{ __('Show products') }}
                                 </div>
                             </div>

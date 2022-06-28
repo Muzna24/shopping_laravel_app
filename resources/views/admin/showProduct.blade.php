@@ -20,7 +20,7 @@
 
 </head>
 <body>
-    <div class="container" style="padding-top: 25px;">
+    <div class="container" style="padding-top: 25px; position: relative;">
         <div class="row">
             <div class="col-12">
                 <div class="alert alert-primary">
@@ -38,16 +38,17 @@
                         <h5 class="card-title">{{ $product->name }}</h5>
                         <p class="card-text">{{ $product->description }}.</p>
                         <h6 class="card-title">{{ $product->price }}</h6>
-                        <a href="#" class="btn btn-primary">Edit</a>
-                        <a href="#" class="btn btn-primary">Delet</a>
+                        <a href="/edit/{{ $product->id }}" class="btn btn-primary">Edit</a>
+                        <a href="delete/{{ $product->id }}" class="btn btn-danger">Delet</a>
                         </div>
                     </div>
 
             </div>
             @endforeach
         </div>
+        <button class="btn btn-primary btn-circle" style="border-radius: 50%; position: absolute; right: 0px;" onclick="location.href='{{ url('add-product') }}'">+</button>
     </div>
-
+    
 
 
 

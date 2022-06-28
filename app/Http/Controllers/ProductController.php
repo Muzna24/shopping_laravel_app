@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\product;
 use App\User;
-use Auth;
-Use Alert;
+use App\product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProductController extends Controller
 {
@@ -45,5 +46,42 @@ class ProductController extends Controller
    
         return back();
    
+    }
+    
+    
+    public function edit($id){
+        $product = DB::table('products')->find($id);
+        return view('admin.updateProduct', ['product'=>$product]);
+    }
+
+    /**
+     * Update the given user.
+     *
+     * @param  Request  $request
+     * @param  string  $id
+     * @return Response
+     */
+
+    public function update(Request $request, $id){
+        
+        DB::table('products')->where('id',$id)->update([
+            'name'=>$request->name,
+            'price'=>$request->price,
+            'description'=>$request->description,
+            'count'=>$request->count,
+            'category'=>$request->category,
+            'image'=>$request->image,
+            'admin_id'=>Auth::user()->id
+        ]);
+        $image=$request->image;
+        $imageFileName=time().'.'.$image->extension();
+        $image->move(public_path('images'),$imageFileName);
+
+        return back();
+    }
+
+    public function delete(product $product, $id){
+        $product::destroy(array('id', $id));
+        return redirect('product/show');
     }
 }

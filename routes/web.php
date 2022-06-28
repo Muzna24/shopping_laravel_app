@@ -25,5 +25,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::view('add-product','admin.addproduct');
 Route::post('add-product/add','ProductController@add');
 Route::get('product/show','ProductController@show');
+Route::get('product/delete/{id}','ProductController@delete');
+Route::get('edit/{id}','ProductController@edit');
+Route::put('edit/{id}', 'ProductController@update');
 
 
