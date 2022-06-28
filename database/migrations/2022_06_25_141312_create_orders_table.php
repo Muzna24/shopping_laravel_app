@@ -18,6 +18,7 @@ class CreateOrdersTable extends Migration
             $table->string('status')->nullable();
             $table->unsignedInteger('admin_id');
             $table->unsignedInteger('customer_id');
+            $table->unsignedInteger('product_id');
             $table->timestamps();
         });
     }

@@ -13,4 +13,8 @@ class order extends Model
     public function admin(){
         return $this->belongsTo(Admin::class);
     }
+
+    public function products(){
+        return $this->hasMany(product::class);
+    }
 }
