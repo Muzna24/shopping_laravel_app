@@ -20,6 +20,16 @@
 
 </head>
 <body>
+    <div class="container">
+        <ul class="navbar-nav ml-auto">
+           
+                <li class="nav-item">
+                    <a id="navbarDropdown" class="nav-link" href="{{ url('/home') }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                        Home
+                    </a>
+                </li>
+        </ul>
+    </div>
     <div class="container" style="padding-top: 25px; position: relative;">
         <div class="row">
             <div class="col-12">
