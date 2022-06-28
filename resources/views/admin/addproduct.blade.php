@@ -25,6 +25,11 @@
     
 </head>
 <body>
+<div class="container">
+<div class="row pt-5">
+<h3 align="center">Add Products </h3>
+    <div class="row pt-5">
+
   <div class="alert alert-danger">
     <ul>
     @foreach($errors->all() as $error)
@@ -78,6 +83,9 @@
 </tr>
 <table>
  </form>
+</div>
+</div>
+</div>
  @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
 
 </body>
