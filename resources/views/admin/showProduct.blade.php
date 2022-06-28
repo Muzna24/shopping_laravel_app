@@ -40,20 +40,49 @@
         </div>
         <div class="row">
             @foreach ($products as $product)
+            @if ($product->category == 'mans')
             <div class="col-4">
-                
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <h5 class="card-title">{{ $product->name }}</h5>
-                        <p class="card-text">{{ $product->description }}.</p>
-                        <h6 class="card-title">{{ $product->price }}</h6>
-                        <a href="/edit/{{ $product->id }}" class="btn btn-primary">Edit</a>
-                        <a href="delete/{{ $product->id }}" class="btn btn-danger">Delet</a>
-                        </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">{{ $product->name }}</h5>
+                    <p class="card-text">{{ $product->description }}.</p>
+                    <h6 class="card-title">{{ $product->price }}</h6>
+                    <a href="/edit/{{ $product->id }}" class="btn btn-primary">Edit</a>
+                    <a href="delete/{{ $product->id }}" class="btn btn-danger">Delet</a>
                     </div>
-
+                </div>
             </div>
+            @elseif($product->category == 'Womans')
+            <hr>
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">{{ $product->name }}</h5>
+                    <p class="card-text">{{ $product->description }}.</p>
+                    <h6 class="card-title">{{ $product->price }}</h6>
+                    <a href="/edit/{{ $product->id }}" class="btn btn-primary">Edit</a>
+                    <a href="delete/{{ $product->id }}" class="btn btn-danger">Delet</a>
+                    </div>
+                </div>
+            </div>
+            @else
+            <hr>
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">{{ $product->name }}</h5>
+                    <p class="card-text">{{ $product->description }}.</p>
+                    <h6 class="card-title">{{ $product->price }}</h6>
+                    <a href="/edit/{{ $product->id }}" class="btn btn-primary">Edit</a>
+                    <a href="delete/{{ $product->id }}" class="btn btn-danger">Delet</a>
+                    </div>
+                </div>
+            </div>
+            @endif
+            
             @endforeach
         </div>
         <button class="btn btn-primary btn-circle" style="border-radius: 50%; position: absolute; right: 0px;" onclick="location.href='{{ url('add-product') }}'">+</button>

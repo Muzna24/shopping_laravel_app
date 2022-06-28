@@ -32,7 +32,7 @@
                                 </button>
                             </div>
                             <div class="col-4">
-                                <button class="btn btn-info" onclick="location.href='{{ url('') }}'">
+                                <button class="btn btn-info" onclick="location.href='{{ url('order/show') }}'">
                                     {{ __('Show orders') }}
                                 </button>
                             </div>
