@@ -80,4 +80,12 @@ class orderController extends Controller
         $record->save();
         return "order add successfully!";
     }
+    public function showorder(){
+        $o['orders']= Order::all();
+        $p['products']= Product::all();
+        $data=$o+$p;
+
+
+         return view('customer.showorder')->with($data);
+    }
 }

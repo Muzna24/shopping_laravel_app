@@ -38,6 +38,8 @@ Route::get('product/list', 'orderController@showProduct');
 
 Route::get('/request/{id}', 'orderController@addRequest');
 Route::put('/request/{id}', 'orderController@addOrder');
+Route::get('order/list','orderController@showorder');
+
 
 
 
