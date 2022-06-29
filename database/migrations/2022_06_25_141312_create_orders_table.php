@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->string('customer_email')->nullable();
             $table->string('customer_address')->nullable();
             $table->string('customer_phone')->nullable();
-            $table->string('status')->nullable();
+            $table->string('status')->default('In progress');
             // $table->unsignedInteger('admin_id');
             // $table->unsignedInteger('customer_id');
             $table->unsignedInteger('user_id');

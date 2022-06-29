@@ -3,18 +3,17 @@
 namespace App\Mail;
 
 use App\order;
-use App\User;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
-class CustomerInformMail extends Mailable
+class orderShippingMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-
     public $order;
+
     /**
      * Create a new message instance.
      *
@@ -32,11 +31,10 @@ class CustomerInformMail extends Mailable
      */
     public function build()
     {
-        return $this->view('customer.informMail')
+        return $this->view('customer.orderMail')
                     ->with([
                         'name' => $this->order->customer_name,
                         'status' => $this->order->status,
                     ]);
-        
     }
 }

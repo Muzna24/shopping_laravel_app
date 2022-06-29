@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\orderController;
 use App\product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -33,7 +34,11 @@ Route::put('edit/{id}', 'ProductController@update');
 Route::get('order/show','orderController@show');
 Route::get('order-edit/{id}','orderController@edit');
 Route::put('order-edit/{id}', 'orderController@update');
-Route::get('product/pay', 'orderController@showProduct');
+Route::get('product/list', 'orderController@showProduct');
+
+Route::get('/request/{id}', 'orderController@addRequest');
+Route::put('/request/{id}', 'orderController@addOrder');
+
 
 
 

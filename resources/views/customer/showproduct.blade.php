@@ -48,8 +48,7 @@
                     <h5 class="card-title">{{ $product->name }}</h5>
                     <p class="card-text">{{ $product->description }}.</p>
                     <h6 class="card-title">{{ $product->price }}</h6>
-                    <a href="/edit/{{ $product->id }}" class="btn btn-primary">Edit</a>
-                    <a href="delete/{{ $product->id }}" class="btn btn-danger">Delet</a>
+                    <a href="/request/{{ $product->id }}" class="btn btn-primary">Add to cart</a>
                     </div>
                 </div>
             </div>
@@ -62,8 +61,7 @@
                     <h5 class="card-title">{{ $product->name }}</h5>
                     <p class="card-text">{{ $product->description }}.</p>
                     <h6 class="card-title">{{ $product->price }}</h6>
-                    <a href="/edit/{{ $product->id }}" class="btn btn-primary">Edit</a>
-                    <a href="delete/{{ $product->id }}" class="btn btn-danger">Delet</a>
+                    <a href="/request/{{ $product->id }}" class="btn btn-primary">Add to cart</a>
                     </div>
                 </div>
             </div>
@@ -77,7 +75,7 @@
                     <p class="card-text">{{ $product->description }}.</p>
                     <h6 class="card-title">{{ $product->price }}</h6>
                     
-                    <a href="delete/{{ $product->id }}" class="btn btn-danger">Add to cart</a>
+                    <a href="/request/{{ $product->id }}" class="btn btn-danger">Add to cart</a>
                     </div>
                 </div>
             </div>
