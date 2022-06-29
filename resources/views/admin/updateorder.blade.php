@@ -25,33 +25,31 @@
         @csrf
         @method('PUT')
         
-        <tr>
+    <tr>
         <td> Order ID</td>
-        <td>customer ID</td>
-        <td>Product ID</td>
+        <td>customer Name</td>
+        <td>customer Email</td>
+        <td>customer Addrss</td>
+        <td>customer Phone</td>
         <td>Order status</td>   
-</tr>
-        <tr>
-           
-                <td>
-                    
-
-                <input type="hidden" class="form-control" id="product_name"  name="name" value="{{ $order->id}}">
-                {{$order->id}}
-           
-            </td>
-       
+    </tr>
+    <tr> 
+        @foreach($orders as $order)
             <td>
-                <label for="name" class="form-label">Customer ID</label>
+                <input type="text" class="form-control" id="order_id"  name="order_id" value="{{ $order->id}}"> 
             </td>
             <td>
-                <input type="hidden" class="form-control" id="cid"  name="cid" value="{{ $order->customer_id }}">
-                {{ $order->customer_id }}
+                <input type="text" class="form-control" id="name"  name="name" value="{{ $order->customer_name }}">
             </td>
            
             <td>
-                <input type="hidden" class="form-control" id="qantity"  name="pid" value="{{ $order->product_id }}">
-                {{ $order->product_id }}
+                <input type="text" class="form-control" id="email"  name="email" value="{{ $order->customer_email  }}">
+            </td>
+            <td>
+                <input type="text" class="form-control" id="address"  name="address" value="{{ $order->customer_address  }}">
+            </td>
+            <td>
+                <input type="text" class="form-control" id="phone"  name="phone" value="{{ $order->customer_phone  }}">
             </td>
        
             <td>
@@ -66,7 +64,8 @@
             <td >
             <button type="submit" class="btn btn-primary">Update Order Status</button>
             </td>
-        </tr>
+        @endforeach
+    </tr>
 
     </form>
     @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
