@@ -84,4 +84,5 @@ class ProductController extends Controller
         $product::destroy(array('id', $id));
         return redirect('product/show');
     }
+
 }

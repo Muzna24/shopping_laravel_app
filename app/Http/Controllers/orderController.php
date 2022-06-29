@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
 
-
+use App\Product;
 use Illuminate\Support\Facades\Mail;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -53,5 +53,8 @@ class orderController extends Controller
         return back();
     }
 
-    
+    public function showProduct(){
+        $data['products'] = product::all();
+        return view('customer.showproduct')->with($data);
+    }
 }

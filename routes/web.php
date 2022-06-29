@@ -33,6 +33,7 @@ Route::put('edit/{id}', 'ProductController@update');
 Route::get('order/show','orderController@show');
 Route::get('order-edit/{id}','orderController@edit');
 Route::put('order-edit/{id}', 'orderController@update');
+Route::get('product/pay', 'orderController@showProduct');
 
 
 
