@@ -33,8 +33,9 @@
         <td>customer Phone</td>
         <td>Order status</td>   
     </tr>
-    <tr> 
+     
         @foreach($orders as $order)
+        <tr>
             <td>
                 <input type="text" class="form-control" id="order_id"  name="order_id" value="{{ $order->id}}"> 
             </td>
@@ -64,8 +65,9 @@
             <td >
             <button type="submit" class="btn btn-primary">Update Order Status</button>
             </td>
+            </tr>
         @endforeach
-    </tr>
+   
 
     </form>
     @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
