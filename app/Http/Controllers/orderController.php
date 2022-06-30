@@ -18,13 +18,19 @@ class orderController extends Controller
 {
 
     public function show(){
-        $data['orders'] = Order ::all();
+        $o['orders'] = Order ::all();
+        $p['products'] = Product ::all();
+        $data=$o+$p;
+
          return view('admin.showOrder')->with($data);
     }
 
 
     public function edit($id){
-        $data['orders'] = order ::all();
+        $o['orders'] = Order ::all();
+        $p['products'] = Product ::all();
+        $data=$o+$p;
+        
         return view('admin.updateorder')->with($data);
 
         // $order = DB::table('orders')->find($id);

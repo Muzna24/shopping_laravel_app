@@ -22,37 +22,51 @@
 
 </head>
 <body>
+
 <div class="container">
+
 <div class="row pt-5">
-    <h3 align="center">Orders </h3>
+<h3 >Orders </h3>
+
     <div class="row pt-5">
-<table border="2">
+    <table border ="1" width="200"  cellpadding="10"   >
+
     <tr>
         <td> Order ID</td>
-        <td>customer Name</td>
-        <td>customer Email</td>
-        <td>customer Address</td>
-        <td>customer Phone</td>
+        <td>customer Details</td>
+        <td>Products</td>
         <td>Order status</td>   
     </tr>
  
     @foreach($orders as $order)
     <tr>
         <td>
-            {{ $order->id }}
+        <input type="text" class="form-control" id="order_id"  name="order_id" value="{{ $order->id}}"> 
         </td>
         <td>
-            {{ $order->customer_name }}
-        </td>
-        <td>
-            {{ $order->customer_email }}
-        </td>
-        <td>
-            {{ $order->customer_address }}
-        </td>
-        <td>
-            {{ $order->customer_phone }}
-        </td>
+    <ul><li>
+Name:
+                <input type="text" class="form-control" id="name"  name="name" value="{{ $order->customer_name }}">
+</li><li> Email:   
+                <input type="text" class="form-control" id="email"  name="email" value="{{ $order->customer_email  }}">
+</li><li>   Address:
+                <input type="text" class="form-control" id="address"  name="address" value="{{ $order->customer_address  }}">
+</li><li>  Phone:
+                <input type="text" class="form-control" id="phone"  name="phone" value="{{ $order->customer_phone  }}">
+</li></ul>
+            </td>
+            @foreach($products as $product)
+
+@if($order->product_id === $product->id)
+
+<td>               
+<img src="{{asset('images')}}/{{$product->image}}" style="width: 3rem; alt="...">
+
+{{$product->name}}  </td>
+
+@endif
+
+@endforeach
         <td>
 <!--<select name="order_status" id="order_status">
     <option value=" in_progress">{{ $order->status }}</option>
