@@ -47,7 +47,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-4">
-                                <button class="btn btn-info" onclick="location.href='{{ url('') }}'">
+                                <button class="btn btn-info" onclick="location.href='{{ url('order/list') }}'">
                                     {{ __('Show orders') }}
                                 </button>
                             </div>

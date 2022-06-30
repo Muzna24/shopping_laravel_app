@@ -29,10 +29,9 @@
                     </a>
                 </li>
                 <li>
-                    <form class="form-inline my-2 my-lg-0" action="{{ url('/search') }}" method="get">
-                        <input class="form-control mr-sm-2" type="search" name="query" id="query" placeholder="search here">
-                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-                    </form>
+                    <a id="navbarDropdown" class="nav-link" href="{{ url('/product/list') }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                        Back
+                    </a>
                 </li>
         </ul>
     </div>
@@ -53,13 +52,13 @@
                     <h5 class="card-title">{{ $product->name }}</h5>
                     <p class="card-text">{{ $product->description }}.</p>
                     <h6 class="card-title">{{ $product->price }}</h6>
-                    <a href="/request/{{ $product->id }}" class="btn btn-primary">Add to cart</a>
+                    <a href="/edit/{{ $product->id }}" class="btn btn-primary">Edit</a>
+                    <a href="delete/{{ $product->id }}" class="btn btn-danger">Delet</a>
                     </div>
                 </div>
             </div>
             @endforeach
         </div>
-        
     </div>
     
 
