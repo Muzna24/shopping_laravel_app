@@ -42,6 +42,8 @@ Route::get('order/list','orderController@showorder');
 
 Route::get('/search', 'productController@search');
 
+Route::get('order','orderController@export');
+
 
 
 

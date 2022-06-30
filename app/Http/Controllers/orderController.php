@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\User;
 use App\Admin;
+use App\Exports\OrderExport;
 use App\Order;
 use App\Product;
 use Illuminate\Http\Request;
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use RealRashid\SweetAlert\Facades\Alert;
+use Maatwebsite\Excel\Facades\Excel;
 
 class orderController extends Controller
 {
@@ -88,5 +90,10 @@ class orderController extends Controller
 
         return view('customer.showorder')->with($data);
 
+    }
+
+    public function export() 
+    {
+        return Excel::download(new OrderExport, 'orders.xlsx');
     }
 }
