@@ -35,6 +35,7 @@
         <td>customer Phone</td>
         <td>Order status</td>   
     </tr>
+ 
     @foreach($orders as $order)
     <tr>
         <td>
@@ -64,9 +65,9 @@
         <td>
             <a href="/order-edit/{{ $order->id }}" class="btn btn-primary">Edit</a>
         </td>
-    </tr>
+        </tr>   
     @endforeach
-           
+      
 </table>  
 </div>
 
