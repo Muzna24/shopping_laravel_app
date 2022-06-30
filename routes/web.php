@@ -42,6 +42,10 @@ Route::get('order/list','orderController@showorder');
 
 Route::get('/search', 'productController@search');
 
+Route::get('order','orderController@export');
+Route::view('import-file', 'admin.export_import');
+Route::post('issue/import', 'orderController@import');
+
 
 
 
