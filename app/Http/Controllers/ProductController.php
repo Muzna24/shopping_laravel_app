@@ -85,4 +85,11 @@ class ProductController extends Controller
         return redirect('product/show');
     }
 
+    public function search(){
+        $search_text = $_GET['query'];
+        $products = product::where('category', 'LIKE','%'.$search_text.'%')->get();
+
+        return view('admin.products_search', compact('products'));
+    }
+
 }

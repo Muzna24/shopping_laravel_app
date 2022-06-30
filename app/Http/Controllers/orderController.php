@@ -87,6 +87,7 @@ class orderController extends Controller
         $data=$o+$p+$u;
 
 
-         return view('customer.showorder')->with($data);
+        return view('customer.showorder')->with($data);
+
     }
 }
