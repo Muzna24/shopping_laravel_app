@@ -37,7 +37,7 @@
                                 </button>
                             </div>
                             <div class="col-4">
-                                <button class="btn btn-info" onclick="location.href='{{ url('') }}'">
+                                <button class="btn btn-info" onclick="location.href='{{ url('import-file') }}'">
                                     {{ __('Import/ Export orders') }}
                                 </button>
                             </div>
