@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Admin;
 use App\Exports\OrderExport;
+use App\Imports\OrderImport;
 use App\Order;
 use App\Product;
 use Illuminate\Http\Request;
@@ -96,5 +97,15 @@ class orderController extends Controller
     public function export() 
     {
         return Excel::download(new OrderExport, 'orders.xlsx');
+    }
+
+    public function import(Request $request){
+        $request->validate([
+             'excelFile'=>'mimes:xlsx',
+        ]);
+        Excel::import(new OrderImport, $request->excelFile);
+        
+        Alert::success('File Importing', 'file imported successfully!');
+        return back();
     }
 }
