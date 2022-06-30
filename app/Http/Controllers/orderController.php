@@ -83,7 +83,8 @@ class orderController extends Controller
     public function showorder(){
         $o['orders']= Order::all();
         $p['products']= Product::all();
-        $data=$o+$p;
+        $u['users']= User::all();
+        $data=$o+$p+$u;
 
 
          return view('customer.showorder')->with($data);

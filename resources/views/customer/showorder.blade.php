@@ -26,13 +26,10 @@
 <div class="row pt-5">
     <h3 align="center">Orders </h3>
     <div class="row pt-5">
-    @foreach($orders as $order)
-    @if (Auth::user()->id === $order->user_id)
+    
 
-        <div>Name : {{$order->customer_name}}</div> 
-        @endif
-
-        @endforeach
+        <div>Name : {{Auth::user()->name}}</div> 
+      
 
 <table border="2">
     <tr>
@@ -41,10 +38,15 @@
         <td>Product Name</td>
         <td>customer Address</td>
         <td>customer Phone</td>
+        <td>Date of Order</td>
+
     </tr>
+   
+    @foreach($users as $user)
+    
+        
+    @foreach($user->orders as $order)
     <tr>
-    @foreach($orders as $order)
-  
      @if (Auth::user()->id === $order->user_id)
     <td>{{$order->id}}</td>
     <td>{{$order->status}}</td>
@@ -63,6 +65,8 @@
     <td>{{$order->customer_address	}}</td>
 
     <td>{{$order->customer_phone}}</td>
+    <td>{{$order->created_at}}</td>
+
 
 
 
@@ -71,6 +75,7 @@
                 
           
 
+            @endforeach
             @endforeach
 
 </tr>   
